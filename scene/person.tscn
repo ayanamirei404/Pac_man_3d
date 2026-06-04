@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dxen0gqxm6ql6"]
+
+[ext_resource type="Script" uid="uid://cyb8kabah5ijv" path="res://scene/player_3d.gd" id="1_0pife"]
+[ext_resource type="Script" uid="uid://cce15h30wx1cy" path="res://scene/flashlight_follow.gd" id="2_3qlke"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6ccd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kckx8"]
+
+[node name="PLAYER3D" type="CharacterBody3D" unique_id=304556147 groups=["player"]]
+script = ExtResource("1_0pife")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1152112416]
+transform = Transform3D(1, -1.22781785e-11, 2.910383e-11, -1.22781785e-11, 1, 1.1641532e-10, 0, 0, 1, -1.4551915e-11, 2.9802322e-08, 5.9604645e-08)
+shadow_enabled = true
+spot_range = 56.327362
+spot_attenuation = 0.5
+spot_angle = 39.84513
+script = ExtResource("2_3qlke")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1685992032]
+transform = Transform3D(0.9999999, 0.00030066422, 0.00037088804, -0.00030130657, 0.99999845, 0.0017330701, -0.00037036638, -0.0017331816, 0.99999845, 0, 0.46497142, -0.38675767)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1135594584]
+shape = SubResource("CapsuleShape3D_u6ccd")
+
+[node name="BatteryBar" type="ProgressBar" parent="." unique_id=1373926489]
+anchors_preset = -1
+anchor_left = 0.42864582
+anchor_top = 0.9033333
+anchor_right = 0.55885416
+anchor_bottom = 0.97583336
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 60
+
+[node name="StaminaBar" type="ProgressBar" parent="." unique_id=1599332176]
+anchors_preset = -1
+anchor_left = 0.06458333
+anchor_top = 0.9033333
+anchor_right = 0.18125
+anchor_bottom = 0.97583336
+offset_left = 462.0
+offset_right = 462.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=536383492]
+mesh = SubResource("CapsuleMesh_kckx8")
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=249415793]
+transform = Transform3D(1, 0, 0, 0, 0.87611324, 0.48210546, 0, -0.48210546, 0.87611324, 0, 4.0940404, 3.0123158)
+doppler_tracking = 2

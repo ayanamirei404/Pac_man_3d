@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bthb87lgab5e0"]
+
+[ext_resource type="Script" uid="uid://dk8vhu0axlxuj" path="res://scene/main_menu.gd" id="1_cmhrf"]
+
+[node name="menu" type="Control" unique_id=1813283086]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmhrf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=192550506]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.27450982, 0.27450982, 0.8901961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=512956755]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="restart" type="MenuButton" parent="VBoxContainer" unique_id=1924113067]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "restart"
+
+[node name="quit" type="MenuButton" parent="VBoxContainer" unique_id=1026106290]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "quit"
+
+[node name="continue" type="MenuButton" parent="VBoxContainer" unique_id=1271419096]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "continue
+"
+
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_continue_button_pressed"]

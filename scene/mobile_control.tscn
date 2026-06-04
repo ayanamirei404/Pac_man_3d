@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://mobile_control"]
+
+[ext_resource type="Script" path="res://scene/mobile_control.gd" id="1_abcd"]
+
+[node name="MobileControl" type="CanvasLayer"]
+script = ExtResource("1_abcd")
+layer = 1
+follow_viewport = true
+
+[node name="Joystick" type="Control" parent="."]
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = -50.0
+mouse_filter = 1
+
+[node name="Background" type="TextureRect" parent="Joystick"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = null
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Thumb" type="TextureRect" parent="Joystick/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = null
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ActionButtons" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = -50.0
+offset_bottom = -50.0
+
+[node name="JumpButton" type="TouchScreenButton" parent="ActionButtons"]
+shape = SubResource("CircleShape2D_1")
+texture_normal = null
+texture_pressed = null
+visibility_mode = 0
+action = "Jump"
+
+[node name="SprintButton" type="TouchScreenButton" parent="ActionButtons"]
+shape = SubResource("CircleShape2D_2")
+texture_normal = null
+texture_pressed = null
+visibility_mode = 0
+action = "shift"
+position = Vector2(60, 0)
+
+[node name="LightButton" type="TouchScreenButton" parent="ActionButtons"]
+shape = SubResource("CircleShape2D_3")
+texture_normal = null
+texture_pressed = null
+visibility_mode = 0
+action = "toggle_light"
+position = Vector2(120, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3"]
+radius = 40.0

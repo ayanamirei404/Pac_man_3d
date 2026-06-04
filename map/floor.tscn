@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dxhec0ekxca4k"]
+
+[ext_resource type="PackedScene" uid="uid://c2cuhxg2jiigd" path="res://map/m_floor.glb" id="1_wb31g"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wb31g"]
+data = PackedVector3Array(-1, 0.049999997, 1, 1, 0.049999997, 1, -1, -0.049999997, 1, 1, 0.049999997, 1, 1, -0.049999997, 1, -1, -0.049999997, 1, 1, 0.049999997, -1, -1, 0.049999997, -1, 1, -0.049999997, -1, -1, 0.049999997, -1, -1, -0.049999997, -1, 1, -0.049999997, -1, 1, 0.049999997, 1, 1, 0.049999997, -1, 1, -0.049999997, 1, 1, 0.049999997, -1, 1, -0.049999997, -1, 1, -0.049999997, 1, -1, 0.049999997, -1, -1, 0.049999997, 1, -1, -0.049999997, -1, -1, 0.049999997, 1, -1, -0.049999997, 1, -1, -0.049999997, -1, 1, 0.049999997, 1, -1, 0.049999997, 1, 1, 0.049999997, -1, -1, 0.049999997, 1, -1, 0.049999997, -1, 1, 0.049999997, -1, -1, -0.049999997, 1, 1, -0.049999997, 1, -1, -0.049999997, -1, 1, -0.049999997, 1, 1, -0.049999997, -1, -1, -0.049999997, -1)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=2121044371]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1888133516]
+shape = SubResource("ConcavePolygonShape3D_wb31g")
+
+[node name="m_floor" parent="." unique_id=737255184 instance=ExtResource("1_wb31g")]

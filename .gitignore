@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Built binaries
+*.exe
+
+# Logs
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db

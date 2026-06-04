@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://caobrtk5lwgnb"]
+
+[ext_resource type="PackedScene" uid="uid://dxen0gqxm6ql6" path="res://scene/person.tscn" id="1_wgwml"]
+[ext_resource type="PackedScene" uid="uid://bhh2m8atyg1s1" path="res://scene/game_over_ui.tscn" id="2_qvu5t"]
+[ext_resource type="PackedScene" uid="uid://bthb87lgab5e0" path="res://scene/menu.tscn" id="2_ry1uq"]
+[ext_resource type="PackedScene" uid="uid://bvub6wt5tnpwg" path="res://ghost/ghost.tscn" id="3_fb1ex"]
+[ext_resource type="Script" uid="uid://26j618yd8pnl" path="res://scene/maze_generator.gd" id="4_4wnd8"]
+[ext_resource type="PackedScene" uid="uid://yr8trl72vqje" path="res://map/wall.tscn" id="5_jsie2"]
+[ext_resource type="PackedScene" uid="uid://dxhec0ekxca4k" path="res://map/floor.tscn" id="6_qvu5t"]
+
+[sub_resource type="Environment" id="Environment_wgwml"]
+background_mode = 1
+ambient_light_source = 3
+ambient_light_color = Color(0.39362854, 0.39362854, 0.39362848, 1)
+
+[node name="main_scene" type="Node3D" unique_id=603962380]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=532088133]
+environment = SubResource("Environment_wgwml")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=711783024]
+
+[node name="menu" parent="CanvasLayer" unique_id=1813283086 instance=ExtResource("2_ry1uq")]
+
+[node name="GameOverUI" parent="CanvasLayer" unique_id=1559322675 instance=ExtResource("2_qvu5t")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=654420098]
+
+[node name="MazeGenerator" type="Node3D" parent="." unique_id=303934652]
+script = ExtResource("4_4wnd8")
+wall_scene = ExtResource("5_jsie2")
+floor_scene = ExtResource("6_qvu5t")
+player_scene = ExtResource("1_wgwml")
+ghost_scene = ExtResource("3_fb1ex")
